@@ -1,2 +1,14 @@
-# The Docker image that will be used to build your app
-image: node:lts
+stages:
+  - deploy
+
+# GitLab Pages deployment
+deploy:
+  stage: deploy
+  image: node:lts
+  script:
+    - echo "Deploying static files from the 'public' folder to GitLab Pages"
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
