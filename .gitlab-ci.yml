@@ -1,12 +1,9 @@
-stages:
-  - deploy
+image: busybox
 
-# GitLab Pages deployment
-deploy:
+pages:
   stage: deploy
-  image: node:lts
   script:
-    - echo "Deploying static files from the 'public' folder to GitLab Pages"
+  - echo 'Nothing to do...'
   artifacts:
     paths:
       - public
